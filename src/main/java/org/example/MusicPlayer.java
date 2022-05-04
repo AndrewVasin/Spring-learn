@@ -1,17 +1,15 @@
 package org.example;
 
-import java.util.List;
-
 public class MusicPlayer {
-    private List<Music> musicList;
+    private Music musicList;
     private String name;
     private int volume;
 
-    public List<Music> getMusicList() {
+    public Music getMusicList() {
         return musicList;
     }
 
-    public void setMusicList(List<Music> musicList) {
+    public void setMusicList(Music musicList) {
         this.musicList = musicList;
     }
 
@@ -34,19 +32,17 @@ public class MusicPlayer {
     public MusicPlayer() {
     }
 
-    public MusicPlayer(List<Music> musicList) {
+    public MusicPlayer(Music musicList) {
         this.musicList = musicList;
     }
 
-    public void setMusic(List<Music> musicList) {
+    public void setMusic(Music musicList) {
         this.musicList = musicList;
     }
 
     public void playMusic() {
-        for (Music myMusicList: musicList) {
-            System.out.println("Playing: " + myMusicList.getSong());
-            System.out.println("volume: " + getVolume());
-            System.out.println("name: " + getName());
-        }
+            System.out.println("Playing: " + musicList.getSong());
+//            System.out.println("volume: " + getVolume());
+//            System.out.println("name: " + getName());
     }
 }
