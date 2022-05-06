@@ -1,48 +1,22 @@
 package org.example;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MusicPlayer {
-    private Music musicList;
-    private String name;
-    private int volume;
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
 
-    public Music getMusicList() {
-        return musicList;
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
-    public void setMusicList(Music musicList) {
-        this.musicList = musicList;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public MusicPlayer() {
-    }
-
-    public MusicPlayer(Music musicList) {
-        this.musicList = musicList;
-    }
-
-    public void setMusic(Music musicList) {
-        this.musicList = musicList;
-    }
-
-    public void playMusic() {
-            System.out.println("Playing: " + musicList.getSong());
-//            System.out.println("volume: " + getVolume());
-//            System.out.println("name: " + getName());
+    public String playMusic() {
+        return "Playing: " + classicalMusic.getSong();
+//            System.out.println("Playing: " + classicalMusic.getSong());
+//            System.out.println("Playing: " + rockMusic.getSong());
     }
 }
